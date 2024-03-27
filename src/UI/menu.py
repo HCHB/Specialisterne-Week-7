@@ -211,7 +211,7 @@ class SearchMenu(UIMenu):
         super()._reset_menu()
 
         self._item_type = self._type.value
-        fields = self._logic_facade.get_search_parameters(self._type) # TODO
+        fields = self._logic_facade.get_search_parameters(self._type)
 
         if not fields:
             self._status_message = 'No search fields found'
@@ -248,7 +248,7 @@ class SearchMenu(UIMenu):
         return True
 
     def _search(self):
-        items = self._logic_facade.search(self._type, self._fields) # TODO
+        items = self._logic_facade.search(self._type, self._fields)
         if not items:
             self._status_message = 'Search failed'
             items = []
@@ -420,7 +420,7 @@ class ItemMenu(UIMenu):
         ]
 
     def _search(self):
-        submenu = SearchMenu(self._logic_facade, SearchTypes.ITEM) # TODO
+        submenu = SearchMenu(self._logic_facade, SearchTypes.ITEM)
         item = submenu.run()
 
         self._reset_menu()
@@ -504,7 +504,7 @@ class CategoryMenu(UIMenu):
         ]
 
     def _search(self):
-        submenu = SearchMenu(self._logic_facade, SearchTypes.CATEGORY) # TODO
+        submenu = SearchMenu(self._logic_facade, SearchTypes.CATEGORY)
         item = submenu.run()
 
         self._reset_menu()

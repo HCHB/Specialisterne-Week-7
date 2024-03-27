@@ -523,8 +523,15 @@ GRANT ALL PRIVILEGES ON *.* TO 'hebo_admin_root'@'%' WITH GRANT OPTION;
 -- -----------------------------------------------------
 INSERT INTO Category (name, description) VALUES ('Miscellaneous', 'For everything not in other categories');
 INSERT INTO Category (name, description) VALUES ('Book', 'Books are for reading');
+INSERT INTO Category (name, description) VALUES ('Furniture', 'For sitting on');
+INSERT INTO Category (name, description) VALUES ('Vehicle', 'Goes VROOM');
+INSERT INTO Category (name) VALUES ('Ele');
 INSERT INTO Item (name, description, category_id, price, stock) VALUES ('Reading for dummies', 'a book about reading', '2', 100, 10);
-INSERT INTO Item (name, description, category_id, price, stock) VALUES ('Reading for dummies 2', 'still a book about reading', '2', 100, 10);
+INSERT INTO Item (name, description, category_id, price, stock, stock_target) VALUES ('Reading for dummies 2', 'still a book about reading', '2', 100, 10, 5);
+INSERT INTO Item (name, description, category_id, price, stock) VALUES ('Skoda', 'goes slow', '4', 100, 10);
+INSERT INTO Item (name, description, category_id, price, stock) VALUES ('Egg', 'Sitting in this', '3', 100, 10);
+INSERT INTO Item (name, description, category_id, price, stock, stock_target) VALUES ('Ferrari', 'Goes fast', '4', 10000000, 0, 10);
+INSERT INTO Item (name, description, category_id, price, stock, stock_target) VALUES ('Bench', 'For children', '3', 100, 10, 20);
 INSERT INTO transaction (item_id, amount, transaction_type) VALUES (1, -1, 'sale');
 INSERT INTO transaction (item_id, amount, transaction_type) VALUES (1, -1, 'sale');
 INSERT INTO transaction (item_id, amount, transaction_type) VALUES (2, 1, 'buy');

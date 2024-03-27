@@ -12,7 +12,8 @@ class Item:
 
     _data_fields = ['name', 'description', 'category_id', 'price', 'stock', 'stock_target']
 
-    def __init__(self, name, description=None, category_id=None, price=None, stock=None, stock_target=None, item_id=None):
+    def __init__(self, name, description=None, category_id=None,
+                 price=None, stock=None, stock_target=None, item_id=None):
         self._stock = stock
         self._price = price
         self._category_id = category_id

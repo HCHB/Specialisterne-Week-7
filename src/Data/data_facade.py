@@ -1,11 +1,8 @@
-from src.decorators import singleton
-
 from src.Data.dataconnection import DataConnection
 from src.Data.inventory import Inventory
 from src.Data.object_factory import ObjectFactory
 
 
-# @singleton
 class DataFacade:
     _inventory: type(Inventory)
     _object_factory: type(ObjectFactory)
@@ -29,9 +26,9 @@ class DataFacade:
         return fields
 
     def add(self, object_type, database_object_parameters: dict):
-        object = self._object_factory.build(object_type, **database_object_parameters)
-        object.add()
-        return object
+        data_object = self._object_factory.build(object_type, **database_object_parameters)
+        data_object.add()
+        return data_object
 
     def update(self, database_object, fields=None):
         return database_object.update(fields)

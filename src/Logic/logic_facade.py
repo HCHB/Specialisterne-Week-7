@@ -1,12 +1,10 @@
-from src.decorators import singleton
-from src.project_enums import ObjectTypes, TransactionTypes, SearchTypes
+from src.project_enums import ObjectTypes, SearchTypes
 
 from src.Data.data_facade import DataFacade
 
 from src.Logic.report_generator import ReportGenerator
 
 
-# @singleton
 class LogicFacade:
     _report_generator: type(ReportGenerator)
     _data_facade: type(DataFacade)

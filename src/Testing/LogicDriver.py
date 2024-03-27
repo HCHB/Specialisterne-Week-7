@@ -97,7 +97,6 @@ class LogicDriver:
         parameter_transaction = self._logic_facade.get_search_parameters(SearchTypes.TRANSACTION)
         parameter_log = self._logic_facade.get_search_parameters(SearchTypes.LOG)
 
-
         self._print_objects(self._logic_facade.search(SearchTypes.ITEM, parameter_item))
         self._logic_facade.add(ObjectTypes.ITEM, {'name': 'paper', 'description': 'for writing', 'category_id': 1, 'price': None, 'stock': None, 'stock_target': None})
         print()

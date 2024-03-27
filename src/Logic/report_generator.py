@@ -1,6 +1,6 @@
 import copy
 
-from src.project_enums import ReportTypes, ObjectTypes, SearchTypes
+from src.project_enums import ReportTypes, SearchTypes
 
 
 class ReportGenerator:
@@ -151,24 +151,3 @@ class ReportGenerator:
             report_string += f'\n\t{item}'
 
         return report_string
-
-
-if __name__ == "__main__":
-    from data_facade import DataFacade
-
-    data = DataFacade()
-    data.authenticate('hebo_test_admin', 'test123')
-    generator = ReportGenerator(data)
-
-    print(generator.get_report_fields(ReportTypes.INVENTORY))
-    print(generator.get_report_fields(ReportTypes.CATEGORIES))
-    print(generator.get_report_fields(ReportTypes.CATEGORY))
-
-    report = generator.generate_report(ReportTypes.CATEGORIES)
-    print(report)
-
-    param = generator.get_report_fields(ReportTypes.CATEGORY)
-    param['category_id'] = 2
-
-    report = generator.generate_report(ReportTypes.CATEGORY, **param)
-    print(report)
